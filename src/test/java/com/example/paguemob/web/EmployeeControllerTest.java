@@ -43,8 +43,8 @@ public class EmployeeControllerTest {
 
     @Before
     public void setUp() throws Exception {
-        companyRepository.deleteAll();
         employeeRepository.deleteAll();
+        companyRepository.deleteAll();
     }
 
     @Test

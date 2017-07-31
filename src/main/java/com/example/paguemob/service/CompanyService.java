@@ -16,7 +16,7 @@ public class CompanyService {
     private final CepService cepService;
 
     public Company create(Company company) {
-        if (company.getAddress() != null && StringUtils.isEmpty(company.getAddress().getCep())) {
+        if (company.getAddress() != null && !StringUtils.isEmpty(company.getAddress().getCep())) {
             company.setAddress(cepService.findByCep(company.getAddress().getCep()));
         }
         return companyRepository.save(company);

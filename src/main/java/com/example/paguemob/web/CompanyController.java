@@ -22,7 +22,7 @@ public class CompanyController {
     private final CompanyService companyService;
 
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE, produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Company> create(@Valid Company company, UriComponentsBuilder builder) {
+    public ResponseEntity<Company> create(@RequestBody @Valid Company company, UriComponentsBuilder builder) {
         Company saved = companyService.create(company);
 
         return ResponseEntity

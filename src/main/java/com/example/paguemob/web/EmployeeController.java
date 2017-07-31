@@ -22,7 +22,7 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE, produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Employee> create(@Valid Employee employee, UriComponentsBuilder builder) {
+    public ResponseEntity<Employee> create(@RequestBody @Valid Employee employee, UriComponentsBuilder builder) {
         Employee created = employeeService.create(employee);
 
         return ResponseEntity
